@@ -69,6 +69,11 @@ npm install hubspot
 
     client.broadcasts.get(opts, cb)
 
+### Properties
+
+    client.properties.get(cb)
+    client.properties.getOne(property_name, cb)
+
 ## License
 
 MIT
