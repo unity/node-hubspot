@@ -21,6 +21,17 @@ npm install hubspot
       client.useToken(config.token);
     }
 
+    if (config.key) {
+        client.setApiKey(config.key)
+    } else if (config.access_token){
+        client.setAccessToken(access_token);
+        if (config.refresh_token) {
+            client.setRefreshToken(refresh_token);
+        }
+    }
+    client.setClientId(config.client_id);
+    client.refreshAccessToken(function(/* err, token */) {});
+
     client.campaigns.get(function(err, res) {
       if (err) { throw err; }
       console.log(res);
